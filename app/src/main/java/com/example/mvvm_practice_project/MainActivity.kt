@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        logic()
     }
     fun logic(){
         userViewModel.user.observe(this, Observer { user ->
@@ -27,11 +26,16 @@ class MainActivity : AppCompatActivity() {
             binding.emailText.text = "Email: ${user.email}"
         })
         binding.updateButton.setOnClickListener {
-            userViewModel.updateUser2()
+//            userViewModel.updateUser2()
         }
         binding.activity2.setOnClickListener {
             startActivity(Intent(this, MainActivity2::class.java))
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        logic()
     }
 
 }
