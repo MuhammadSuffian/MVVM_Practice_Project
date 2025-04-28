@@ -22,7 +22,7 @@ class MainActivity2 : AppCompatActivity() {
         logic()
     }
     fun logic(){
-        userViewModel.user.observe(this, Observer { user ->
+        UserViewModel.user.observe(this, Observer { user ->
             binding.nameText.text = "Name: ${user.name}"
             binding.ageText.text = "Age: ${user.age}"
             binding.emailText.text = "Email: ${user.email}"

@@ -6,8 +6,11 @@ import androidx.lifecycle.ViewModel
 
 class UserViewModel : ViewModel() {
 
-    private val _user = MutableLiveData<User>()
-    val user: LiveData<User> get() = _user
+    companion object {
+        private val _user = MutableLiveData<User>()
+        val user: LiveData<User> get() = _user
+    }
+
 
     init {
         loadUser()

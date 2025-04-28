@@ -20,13 +20,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
     fun logic(){
-        userViewModel.user.observe(this, Observer { user ->
+        UserViewModel.user.observe(this, Observer { user ->
             binding.nameText.text = "Name: ${user.name}"
             binding.ageText.text = "Age: ${user.age}"
             binding.emailText.text = "Email: ${user.email}"
         })
         binding.updateButton.setOnClickListener {
-//            userViewModel.updateUser2()
+            userViewModel.updateUser()
         }
         binding.activity2.setOnClickListener {
             startActivity(Intent(this, MainActivity2::class.java))
