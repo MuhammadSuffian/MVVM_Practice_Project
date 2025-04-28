@@ -28,4 +28,12 @@ class UserViewModel : ViewModel() {
             email = "suffian@example.com"
         )
     }
+
+    fun updateUser2() {
+        _user.value = User(
+            name = "oiafiugbjk",
+            age = 22,
+            email = "suffian@example.com"
+        )
+    }
 }
